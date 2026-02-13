@@ -115,12 +115,3 @@ Este projeto demonstra:
 - Comunicação de insights baseados em dados
 
 
-## 📝 Conclusões
-
-A análise confirmou que a loja de praia vende significativamente mais no verão, principalmente devido ao aumento na quantidade de itens comprados por cliente, não por aumento no número de clientes ou nos preços. Essa informação é valiosa para:
-
-- **Gestão de estoque**: Aumentar estoque no verão
-- **Marketing**: Campanhas focadas em aumentar o ticket médio nas outras estações
-- **Precificação**: Estratégias de bundle para incentivar compras maiores o ano todo
-- **Recursos Humanos**: Planejamento de equipe para alta temporada
-
