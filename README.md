@@ -1,117 +1,115 @@
-# 🏖️ Análise de Vendas - Loja de Praia
+# 🏖️ Sales Analysis - Beach Store
 
-## 📋 Sobre o Projeto
+## 📋 About the Project
 
-Este projeto realiza uma análise exploratória de dados (EDA) sobre as vendas de uma loja de praia, com o objetivo principal de responder à pergunta: **"A loja vende mais no verão?"**
+This project performs an exploratory data analysis (EDA) of a beach store's sales, with the main goal of answering the question: **"Does the store sell more in the summer?"**
 
-Através de técnicas de análise de dados e visualização, investigamos padrões sazonais de vendas, comportamento de clientes e identificamos insights valiosos para tomada de decisão estratégica do negócio.
+Using data analysis and visualization techniques, we investigate seasonal sales patterns and customer behavior, and identify valuable insights for strategic business decisions.
 
-## 🎯 Objetivos
+## 🎯 Goals
 
-- Analisar o volume de vendas por estação do ano
-- Identificar padrões de comportamento de compra dos clientes
-- Investigar diferenças no ticket médio entre as estações
-- Compreender se há variação na quantidade de itens comprados por período
-- Fornecer insights baseados em dados para otimização de estoque e estratégias de marketing
+- Analyze sales volume by season
+- Identify customer purchasing behavior patterns
+- Investigate differences in average ticket across seasons
+- Understand whether the number of items purchased varies by period
+- Provide data-driven insights to optimize inventory and marketing strategies
 
-## 🗂️ Estrutura do Dataset
+## 🗂️ Dataset Structure
 
-O dataset `compras_loja_praia.csv` contém as seguintes informações:
+The `compras_loja_praia.csv` dataset contains the following information:
 
-- **id_compra**: Identificador único da compra
-- **cliente_id**: Identificador do cliente
-- **produto**: Nome do produto adquirido
-- **quantidade**: Quantidade de itens comprados
-- **preco_unitario**: Preço unitário do produto
-- **data_compra**: Data da transação
-- **genero_cliente**: Gênero do cliente
-- **idade_cliente**: Idade do cliente (com dados parciais)
-- **cidade**: Cidade do cliente (com dados parciais)
+- **id_compra**: Unique purchase identifier
+- **cliente_id**: Customer identifier
+- **produto**: Name of the purchased product
+- **quantidade**: Number of items purchased
+- **preco_unitario**: Unit price of the product
+- **data_compra**: Transaction date
+- **genero_cliente**: Customer gender
+- **idade_cliente**: Customer age (partial data)
+- **cidade**: Customer city (partial data)
 
-## 🔍 Principais Descobertas
+## 🔍 Key Findings
 
-### ✅ Sim, a loja vende mais no verão!
+### ✅ Yes, the store sells more in the summer!
 
-**Análise detalhada:**
+**Detailed analysis:**
 
-1. **Volume de vendas**: O verão apresenta o maior valor total de vendas entre todas as estações
-2. **Ticket médio**: R$ 2.173,65 no verão vs. R$ 2.004,11 no inverno (~8,5% maior)
-3. **Quantidade de clientes**: Praticamente constante em todas as estações (~2.474 clientes)
-4. **Quantidade média de itens**: 20,1 itens/compra no verão vs. 19,0 na primavera
-5. **Preço unitário**: Permanece estável em todas as estações (~R$ 107)
+1. **Sales volume**: Summer has the highest total sales of all seasons
+2. **Average ticket**: R$ 2,173.65 in summer vs. R$ 2,004.11 in winter (~8.5% higher)
+3. **Number of customers**: Practically constant across all seasons (~2,474 customers)
+4. **Average number of items**: 20.1 items/purchase in summer vs. 19.0 in spring
+5. **Unit price**: Remains stable across all seasons (~R$ 107)
 
-### 💡 Insight Principal
+### 💡 Main Insight
 
-**O aumento nas vendas no verão NÃO é causado por:**
-- Maior número de clientes
-- Produtos mais caros
+**The increase in summer sales is NOT caused by:**
+- A larger number of customers
+- More expensive products
 
-**O aumento É causado por:**
-- Clientes comprando mais itens por transação
-- Maior volume de compras por cliente
+**The increase IS caused by:**
+- Customers buying more items per transaction
+- Higher purchase volume per customer
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
 - **Python 3.x**
-- **Pandas**: Manipulação e análise de dados
-- **NumPy**: Operações numéricas
-- **Matplotlib**: Visualização de dados
-- **Seaborn**: Visualizações estatísticas
-- **SciPy**: Cálculos estatísticos (z-score)
-- **Google Colab**: Ambiente de desenvolvimento
+- **Pandas**: Data manipulation and analysis
+- **NumPy**: Numerical operations
+- **Matplotlib**: Data visualization
+- **Seaborn**: Statistical visualizations
+- **SciPy**: Statistical calculations (z-score)
+- **Google Colab**: Development environment
 
-## 📊 Metodologia
+## 📊 Methodology
 
-### 1. Coleta de Dados
-- Importação do dataset do Google Drive
-- Análise inicial da estrutura dos dados
+### 1. Data Collection
+- Importing the dataset from Google Drive
+- Initial analysis of the data structure
 
-### 2. Análise Exploratória
-- Verificação de dados ausentes (>50% em idade e cidade)
-- Identificação de duplicatas
-- Análise de distribuições estatísticas
-- Visualização de histogramas e boxplots
+### 2. Exploratory Analysis
+- Checking for missing data (>50% in age and city)
+- Identifying duplicates
+- Analyzing statistical distributions
+- Visualizing histograms and boxplots
 
-### 3. Tratamento de Dados
+### 3. Data Treatment
 
-**Tratamentos realizados:**
-- ✅ Conversão do campo `data_compra` para formato datetime
-- ✅ Preenchimento de valores ausentes em `genero_cliente` com "Não informado"
-- ✅ Remoção de outliers em `quantidade` usando z-score (>3 desvios padrão)
-- ✅ Correção de discrepâncias em `preco_unitario` (valores de 0,01 substituídos pelo Q1)
-- ✅ Remoção de registros com datas inválidas
-- ✅ Criação de colunas derivadas: `mes`, `ano`, `estacao`, `valor_total`
+**Treatments performed:**
+- ✅ Converted the `data_compra` field to datetime format
+- ✅ Filled missing values in `genero_cliente` with "Não informado" (Not informed)
+- ✅ Removed outliers in `quantidade` using z-score (>3 standard deviations)
+- ✅ Fixed discrepancies in `preco_unitario` (values of 0.01 replaced with Q1)
+- ✅ Removed records with invalid dates
+- ✅ Created derived columns: `mes`, `ano`, `estacao`, `valor_total`
 
-### 4. Análise por Estação
-- Agrupamento de dados por estação (hemisfério sul)
-- Cálculo de métricas agregadas por período
-- Comparação entre estações
+### 4. Analysis by Season
+- Grouping data by season (southern hemisphere)
+- Computing aggregated metrics per period
+- Comparing seasons
 
 
-## 🚀 Como Executar
+## 🚀 How to Run
 
-1. **Clone o repositório**
+1. **Clone the repository**
 ```bash
 git clone https://github.com/seu-usuario/analise-loja-praia.git
 cd analise-loja-praia
 ```
 
-2. **Configure o Google Colab** (se usar)
-   - Faça upload do notebook para o Google Colab
-   - Monte seu Google Drive
-   - Ajuste o caminho do dataset: `/content/drive/MyDrive/datasets/compras_loja_praia.csv`
+2. **Set up Google Colab** (if using it)
+   - Upload the notebook to Google Colab
+   - Mount your Google Drive
+   - Adjust the dataset path: `/content/drive/MyDrive/datasets/compras_loja_praia.csv`
 
-3. **Execute o notebook**
-   - Execute as células sequencialmente
-   - Observe as visualizações e análises geradas
+3. **Run the notebook**
+   - Run the cells in order
+   - Review the generated visualizations and analyses
 
-## 🎓 Aprendizados
+## 🎓 Learnings
 
-Este projeto demonstra:
-- Importância do tratamento adequado de outliers
-- Técnicas de limpeza e preparação de dados
-- Análise de séries temporais e sazonalidade
-- Interpretação de métricas de negócio
-- Comunicação de insights baseados em dados
-
-
+This project demonstrates:
+- The importance of properly handling outliers
+- Data cleaning and preparation techniques
+- Time series and seasonality analysis
+- Interpretation of business metrics
+- Communicating data-driven insights
